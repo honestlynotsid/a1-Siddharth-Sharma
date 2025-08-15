@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    /* Carousel height adjustments */
+    .carousel, .carousel-inner, .carousel-item, .carousel-item img {
+      height: 100vh;
+    }
+    .carousel-item img {
+      object-fit: cover;
+    }
+
+    /* Navbar styling */
+    .navbar {
+      background: rgba(0, 0, 0, 0.3) !important;
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      margin: 10px auto;
+      padding: 5px 20px;
+      max-width: 900px;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+    .nav-link, .dropdown-toggle {
+      color: white !important;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 10px 18px !important;
+    }
+    .nav-link:hover, .dropdown-item:hover {
+      background-color: #007BFF;
+      color: white !important;
+      border-radius: 5px;
+    }
+    .navbar-brand {
+      color: white !important;
+      font-weight: bold;
+      font-size: 1.3rem;
+      margin-right: 40px;
+    }
+    .navbar-toggler {
+      border: none;
+    }
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+    .dropdown-menu {
+      background-color: rgba(0, 0, 0, 0.8);
+      border-radius: 8px;
+    }
+    .dropdown-item {
+      color: white;
+      font-weight: 500;
+    }
+
+    /* Responsive captions */
+    .carousel-caption h4 {
+      font-size: clamp(1.2rem, 2vw, 2rem);
+    }
+    .carousel-caption h6 {
+      font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid justify-content-center">
+    <a class="navbar-brand" href="landing.html">The Pillars</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <!-- Menu Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Menu
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+            <li><a class="dropdown-item" href="starters.html">Starters</a></li>
+            <li><a class="dropdown-item" href="main course.html">Main Course</a></li>
+            <li><a class="dropdown-item" href="beverages.html">Beverages</a></li>
+            <li><a class="dropdown-item" href="desserts.html">Desserts</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="reservations.html">Reservations</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="feedbackform.html">Feedback</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Carousel -->
+<div class="container-fluid p-0">
+  <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="3000">
+        <img src="https://images.unsplash.com/photo-1651440204296-a79fa9988007?q=80&w=2070&auto=format&fit=crop" class="d-block w-100 img-fluid">
+        <div class="carousel-caption d-none d-md-block">
+          <h4>Welcome to The Pillars</h4>
+          <h6>Enjoy delectable Continental Spreads.</h6>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="3000">
+        <img src="https://images.unsplash.com/photo-1559183533-ee5f4826d3db?q=80&w=1127&auto=format&fit=crop" class="d-block w-100 img-fluid">
+        <div class="carousel-caption d-none d-md-block">
+          <h4>Freshly Baked, Always</h4>
+          <h6>Experience our signature dishes.</h6>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="3000">
+        <img src="https://images.unsplash.com/photo-1651978595428-b79169f223a5?q=80&w=1170&auto=format&fit=crop" class="d-block w-100 img-fluid">
+        <div class="carousel-caption d-none d-md-block">
+          <h4>Perfect Ambiance</h4>
+          <h6>Relax, recharge, and rejuvenate.</h6>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservations</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background-color: black;
+      overflow-x: hidden;
+      color: white;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(255, 255, 255, 0.168) !important;
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      margin: 10px auto;
+      padding: 5px 20px;
+      max-width: 900px;
+      position: fixed; /* fixed instead of absolute */
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+    
+    .nav-link, .dropdown-toggle {
+      color: white !important;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 10px 18px !important;
+    }
+    .nav-link:hover, .dropdown-item:hover {
+      background-color: #007BFF;
+      color: white !important;
+      border-radius: 5px;
+    }
+    .navbar-brand {
+      color: white !important;
+      font-weight: bold;
+      font-size: 1.3rem;
+      margin-right: 40px;
+    }
+    .navbar-toggler {
+      border: none;
+    }
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+    .dropdown-menu {
+      background-color: rgba(0, 0, 0, 0.8);
+      border-radius: 8px;
+    }
+    .dropdown-item {
+      color: white;
+      font-weight: 500;
+    }
+
+    .reservation-container {
+      max-width: 600px;
+      margin: 100px auto;
+      padding: 25px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+
+    .form-control, .form-select {
+      background-color: rgba(255,255,255,0.1);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+
+    .form-control::placeholder {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .form-control:focus, .form-select:focus {
+      background-color: rgba(255,255,255,0.15);
+      border-color: #007BFF;
+      color: white;
+      box-shadow: none;
+    }
+
+    /* Dropdown options style */
+    .form-select option {
+      background-color: rgba(0, 0, 0, 0.85);
+      color: white;
+    }
+
+    /* Date picker calendar icon */
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+    }
+
+    .btn-primary {
+      background-color: #007BFF;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white fw-bold" href="landing.html">The Pillars</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button" data-bs-toggle="dropdown">
+            Menu
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+            <li><a class="dropdown-item" href="starters.html">Starters</a></li>
+            <li><a class="dropdown-item" href="main course.html">Main Course</a></li>
+            <li><a class="dropdown-item" href="beverages.html">Beverages</a></li>
+            <li><a class="dropdown-item" href="desserts.html">Desserts</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="reservations.html">Reservations</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="feedbackform.html">Feedback</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div class="container-fluid">
+    <div class="reservation-container">
+      <h2 class="text-center mb-4">Make a Reservation</h2>
+      <form>
+        <!-- Name -->
+        <div class="mb-3">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-control" placeholder="Enter your name" required>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-control" placeholder="Enter your email" required>
+        </div>
+
+        <!-- Phone -->
+        <div class="mb-3">
+          <label class="form-label">Phone Number</label>
+          <input type="tel" class="form-control" placeholder="Enter your phone number" required>
+        </div>
+
+        <!-- Date -->
+        <div class="mb-3">
+          <label class="form-label">Select Date</label>
+          <input type="date" class="form-control" required>
+        </div>
+
+        <!-- Time -->
+        <div class="mb-3">
+          <label class="form-label">Select Time</label>
+          <select class="form-select" required>
+            <option value="" disabled selected>Select time</option>
+            <option>12:00 PM</option>
+            <option>12:30 PM</option>
+            <option>1:00 PM</option>
+            <option>1:30 PM</option>
+            <option>2:00 PM</option>
+            <option>7:00 PM</option>
+            <option>7:30 PM</option>
+            <option>8:00 PM</option>
+            <option>8:30 PM</option>
+            <option>9:00 PM</option>
+          </select>
+        </div>
+
+        <!-- Guests -->
+        <div class="mb-3">
+          <label class="form-label">Number of Guests</label>
+          <select class="form-select" required>
+            <option value="" disabled selected>Select number</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5+</option>
+          </select>
+        </div>
+
+        <!-- Special Requests -->
+        <div class="mb-3">
+          <label class="form-label">Special Requests</label>
+          <textarea class="form-control" rows="3" placeholder="Let us know if you have any special requests"></textarea>
+        </div>
+
+        <!-- Submit -->
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary px-4">Reserve Now</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
